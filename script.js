@@ -3,24 +3,24 @@ function generateReport(data) {
 
   console.log(data.gps.GPSLatitudeRef)
 
-  let content = `
-  <h2>Image Contents:</h2>`
+  let content = ''
 
   try {
-    content += `<p><strong>Coordinates: ${data.gps.GPSLatitudeRef} ${data.gps.GPSLatitude[0]}°${data.gps.GPSLatitude[1]}'${data.gps.GPSLatitude[2]}", ${data.gps.GPSLongitudeRef} ${data.gps.GPSLongitude[0]}°${data.gps.GPSLongitude[1]}'${data.gps.GPSLongitude[2]}"</strong></p>`
+    content += `<div class="exif-section"><p><strong>Coordinates: ${data.gps.GPSLatitudeRef} ${data.gps.GPSLatitude[0]}°${data.gps.GPSLatitude[1]}'${data.gps.GPSLatitude[2]}", ${data.gps.GPSLongitudeRef} ${data.gps.GPSLongitude[0]}°${data.gps.GPSLongitude[1]}'${data.gps.GPSLongitude[2]}"</strong></p>`
 
     content += `
-    <p><a href="https://www.google.com/maps/place/${data.gps.GPSLatitude[0]}%C2%B0${data.gps.GPSLatitude[1]}'${data.gps.GPSLatitude[2]}%22N+${data.gps.GPSLongitude[0]}%C2%B0${data.gps.GPSLongitude[1]}'${data.gps.GPSLongitude[2]}%22W">Google Maps Link</a></p>`
+    <p><a href="https://www.google.com/maps/place/${data.gps.GPSLatitude[0]}%C2%B0${data.gps.GPSLatitude[1]}'${data.gps.GPSLatitude[2]}%22N+${data.gps.GPSLongitude[0]}%C2%B0${data.gps.GPSLongitude[1]}'${data.gps.GPSLongitude[2]}%22W">Google Maps Link</a></p></div>`
   }
   catch {
 
   }
 
   for (var key in data) {
-    content += `<h2>${key}</h2>`
+    content += `<div class="exif-section"><h2>${key}</h2>`
     for (var childKey in data[key]) {
-      content += `<p>${childKey}:${data[key][childKey]}</p>`
+      content += `<p><strong>${childKey}:</strong>${data[key][childKey]}</p>`
     }
+    content += '</div>'
   }
 
   content += `
