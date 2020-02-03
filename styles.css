@@ -6,7 +6,7 @@ body {
 
 .header {
   text-align: center;
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.73)),
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.87)),
   url('assets/map.jpg');
   background-position: center;
   height: 50vh;
@@ -16,7 +16,7 @@ body {
 }
 
 .main-controls {
-  background-color: rgba(255, 255, 255, 0.685);
+  color: white;
   width: 100%;
 }
 
