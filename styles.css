@@ -1,17 +1,32 @@
 body {
   font-family: sans-serif;
   margin: 0;
+  text-align: center;
 }
 
-.container {
-  padding: 4em 0;
+.header {
   text-align: center;
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.73)),
+  url('assets/map.jpg');
+  background-position: center;
+  color: white;
+  height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-controls {
+  background-color: rgba(0, 0, 0, 0.685);
+  width: 100%;
 }
 
 button {
   padding: 1em;
   border-radius: 5px;
   background-color: #ff4444;
+  color: white;
+  border: none;
 }
 
 iframe {
