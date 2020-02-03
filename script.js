@@ -21,7 +21,7 @@ document.getElementById('image-submit').addEventListener('click', function () {
 
   const formData = new FormData()
 
-  formData.append('photo', photo)
+  formData.append('sampleFile', photo)
 
   console.log(photo)
 
