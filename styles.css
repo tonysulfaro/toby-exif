@@ -1,7 +1,8 @@
-.body {
+body {
   font-family: sans-serif;
 }
 
 .container {
   padding: 4em;
+  text-align: center;
 }
