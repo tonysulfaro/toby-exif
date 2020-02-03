@@ -16,14 +16,14 @@ function generateReport(data) {
 
   }
 
-  content += `
-  <p>Make: ${data.image.Make}</p>
-  <p>Model: ${data.image.Model}</p>
-  <p>X Resolution: ${data.image.XResolution}</p>
-  <p>Y Resolution: ${data.image.YResolution}</p>
+  for (var key in data) {
+    content += `<h2>${key}</h2>`
+    for (var childKey in data[key]) {
+      content += `<p>${childKey}:${data[key][childKey]}</p>`
+    }
+  }
 
-  <p>${JSON.stringify(data)}</p>
-  
+  content += `
   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2887.1797815842424!2d-83.8497830845025!3d43.64442777912159!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDM4JzM5LjkiTiA4M8KwNTAnNTEuMyJX!5e0!3m2!1sen!2sus!4v1580759464539!5m2!1sen!2sus"  frameborder="0" style="border:0;" allowfullscreen=""></iframe>  
   `
 
